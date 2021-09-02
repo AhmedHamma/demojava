@@ -1,6 +1,14 @@
 package com.example.demo;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+@Entity
 public class Personnage {
+    @Id
+    @GeneratedValue(strategy= GenerationType.AUTO)
     public int id;
     public String nom;
     public String type;
@@ -11,6 +19,10 @@ public class Personnage {
         this.nom = nom;
         this.type = type;
         this.pdv = pdv;
+    }
+
+    public Personnage() {
+
     }
 
     public int getId() {
